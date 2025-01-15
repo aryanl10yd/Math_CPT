@@ -1,5 +1,5 @@
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
   background-color: #f7e9d7;
   margin: 0;
   padding: 0;
@@ -39,4 +39,40 @@ nav ul li a:hover {
 section {
   padding: 50px;
   min-height: 100vh;
+}
+
+/* Styles for image expansion */
+.image-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.image-overlay img {
+  max-width: 90%;
+  max-height: 90%;
+  border: 3px solid white;
+  border-radius: 10px;
+}
+
+.image-overlay.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Style for zoomable image */
+.image-overlay img {
+  cursor: zoom-in;
+  transform-origin: center center;
+  transition: transform 0.3s ease;
 }
